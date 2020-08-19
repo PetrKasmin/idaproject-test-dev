@@ -1,28 +1,8 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">
-        test-dev-idaproject
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      Rent whatever
+      Add new
     </div>
   </div>
 </template>
@@ -32,7 +12,7 @@ export default {}
 </script>
 
 <style>
-.container {
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -69,5 +49,5 @@ export default {}
 
 .links {
   padding-top: 15px;
-}
+} */
 </style>
