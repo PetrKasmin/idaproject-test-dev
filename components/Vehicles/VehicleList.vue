@@ -1,16 +1,14 @@
 <template>
     <ul class="vehicles">
         <li v-for="item in vehicles" :key="item.id" class="vehicles-wrap">
-            <!-- <nuxt-link class="vehicles-item" :to="{ name : 'vehicle', params: { id: item.id }}"> -->
-            <nuxt-link class="vehicles-item" :to="`${item.id}`">
-
+            <nuxt-link class="vehicles-item" :to="item.id">
                 <img class="vehicles-item-preview" :src="item.preview" />
-                <div>            
-                    <h4 class="vehicles-item-title">{{ item.name }}</h4>
+                <span>
+                    <b class="vehicles-item-title">{{ item.name }}</b>
                     <p class="vehicles-item-descr">{{ item.description }}</p>
                     <span class="vehicles-item-rent">{{ item.rent }} $/h</span>
                     <!-- {{ item }} -->
-                </div>
+                </span>
             </nuxt-link>
         </li>
     </ul>
@@ -50,6 +48,7 @@ export default {
     background: #FCFCFC;
     border-radius: 32px;
     padding: 1.5rem;
+    text-decoration: none;
 }
 
 .vehicles-item-preview {

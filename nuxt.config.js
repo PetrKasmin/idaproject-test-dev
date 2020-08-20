@@ -25,11 +25,18 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  loading: true,
+  transition: {
+    name: 'slide-fade',
+    // mode: 'out-in'
+  },
   /*
   ** Global CSS
   */
-  css: [
-  ],
+ css: [
+  { src: '~assets/sass/app.scss', lang: 'scss' }
+],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
@@ -63,5 +70,12 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    build: {
+      extractCSS: true,
+      // or
+      extractCSS: {
+        ignoreOrder: true
+      }
+    }
   }
 }

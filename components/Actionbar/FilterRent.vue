@@ -1,25 +1,42 @@
 <template>
   <div class="rent">
     Rent
-
     <span class="rent-box">
-      <select class="rent-box-select">
-        <option>whatever</option>
-        <option>3333</option>
-        <option>123</option>
+      <select v-model="vehicleType" class="rent-box-select">
+        <option selected value="all">all vehicle</option>
+        <option v-for="(type, i) in types" :key="i">
+          {{ type }}
+        </option>
       </select>
-      <!-- <svg class="rent-box-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 8L0 1.99965L2.00094 0L6 4.00071L9.99906 0L12 1.99965L6 8Z" fill="#4959FF"/>
-      </svg> -->
     </span>
-
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
-
+  data: () => ({
+    vehicleType: 'all'
+  }),
+  computed: {
+    ...mapGetters({
+      types: 'getType'
+    })
+  },
+  watch: {
+    vehicleType(val) {
+      this.vehicleFiltered(val);
+    }
+  },
+  methods: {
+    vehicleFiltered (type) {
+      this.$store.dispatch('vehicleFiltered', type);
+    }
+  },
+  created () {
+    this.vehicleFiltered('all');
+  }
 }
 </script>
 
@@ -44,6 +61,7 @@ export default {
     position: relative;
 
     .rent-box-select {
+      line-height: 90%;
       font-style: normal;
       font-weight: 600;
       font-size: 40px;

@@ -81,6 +81,9 @@ export default {
 }
 .vehicles-details-title {
     padding: 2rem 0 1rem 0;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
 }
 
 
@@ -104,7 +107,7 @@ export default {
             }
         }
 
-        
+
     }
 }
 </style>

@@ -1,3 +1,9 @@
 <template>
-    <h2>Rent team</h2>
+    <p v-if="vehicle" class="info-text">{{ vehicle.team_text }}</p>
 </template>
+
+<script>
+export default {
+  props: ['vehicle']
+}
+</script>
