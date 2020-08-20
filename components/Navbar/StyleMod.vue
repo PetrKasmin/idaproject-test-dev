@@ -26,5 +26,9 @@ export default {
   .mod-icon {
     margin-right: 0.5rem;
   }
+
+  span {
+    color: #677B8F;
+  }
 }
 </style>

@@ -1,10 +1,7 @@
 <template>
-
   <div class="wrapper">
-    <Nuxt name="top" />
     <Navigation />
     <main class="container">
-      <NavAction />
       <Nuxt />
     </main>
   </div>

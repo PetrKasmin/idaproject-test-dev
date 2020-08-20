@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
 #main-nav {
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 .nav-wrapper {
   display: flex;
