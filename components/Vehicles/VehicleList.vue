@@ -1,6 +1,6 @@
 <template>
     <ul class="vehicles">
-        <li v-for="item in vehicles" :key="item.id" class="vehicles-wrap">
+        <li v-for="item in vehicles" :key="item.id" class="vehicles-wrap cursor-list">
             <nuxt-link class="vehicles-item" :to="item.id">
                 <img class="vehicles-item-preview" :src="item.preview" />
                 <span>

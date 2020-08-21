@@ -2,7 +2,6 @@
   <div class="wrapper">
     <Navigation />
     <main class="container">
-      <NavAction />
       <Nuxt />
     </main>
   </div>
@@ -10,15 +9,15 @@
 
 <script>
 import Navigation from '@/components/Navbar/Navigation'
-import NavAction from '@/components/Actionbar/NavAction'
-
 
 export default {
-  components: { 
-    Navigation, 
-    NavAction
-  },
-  computed: {
-  }
+  middleware: 'error',
+  components: { Navigation }
 }
 </script>
+
+<style lang="scss" scoped>
+main {
+  height: 88%;
+}
+</style>

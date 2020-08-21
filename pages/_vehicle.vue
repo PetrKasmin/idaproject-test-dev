@@ -25,9 +25,18 @@
                 </ul>
             </nav>
 
-            <transition name="fade" mode="out-in"> -->
+            <transition name="fade" mode="out-in">
                 <NuxtChild :vehicle="vehicle" />
             </transition>
+
+            <div class="action-rent">
+                <div class="action-rent-price">
+                    Rent for <span class="color-violet">{{ vehicle.rent }} $/h</span>
+                </div>
+                <div class="action-rent-btn cursor">
+                    Rent now
+                </div>
+            </div>
 
         </div>
 
@@ -39,22 +48,23 @@
 import { mapMutation, mapGetters } from 'vuex';
 
 export default {
+    validate({ params }) {
+        return `${params.vehicle}`.length === 24;
+    },
     layout: 'show',
     computed: {
         ...mapGetters({
-            vehicle: 'getVehicle'
+            vehicle: 'getVehicle',
+            error: 'error'
         })
     },
     mounted () {
-        // this.$store.dispatch('setVehicle', this.$route.params.id);
-        // setVehicle(this.$route.params.id)
-        this.getVehicle()
+        this.getVehicle();
+        if (this.error) {
+            throw new Error({ statusCode: 500, message: 'Server error' });
+        }
     },
     methods: {
-		// ...mapMutation({
-		// 	setVehicle: 'setVehicle'
-        // }),
-
         getVehicle () {
             this.$store.commit('setVehicle', this.$route.params.vehicle);
         }
@@ -108,6 +118,32 @@ export default {
         }
 
 
+    }
+}
+
+.action-rent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background: #f3f4f7;
+    border-radius: 16px;
+
+
+    .action-rent-price {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 140%;
+    }
+    .action-rent-btn {
+        background: #4959FF;
+        border-radius: 12px;
+        padding: 0 2rem;
+        height: 44px;
+        line-height: 42px;
+        color: #fff;
+        cursor: pointer;
     }
 }
 </style>

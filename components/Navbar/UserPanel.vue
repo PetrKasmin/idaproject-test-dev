@@ -14,7 +14,7 @@
     </div>
 
     <span class="nav-profile-name"> Bessie Cooper </span>
-    <img class="nav-profile-avatar" width="56" height="56" src="/avatars/avatar.png" />
+    <img class="nav-profile-avatar cursor" width="56" height="56" src="/avatars/avatar.png" />
  </div>
 </template>
 
