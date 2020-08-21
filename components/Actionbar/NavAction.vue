@@ -10,7 +10,7 @@
         <div class="modal-form animation-modal" @click.stop="">
           <div class="modal-form-box">
             <h3 class="modal-form-box-title">Add new vehicle</h3>
-            <svg class="cursor" @click.prevent="actionForm(!form)" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="modal-form-box-icon cursor" @click.prevent="actionForm(!form)" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="48" height="48" rx="16" fill="#F3F4F7"/>
               <path d="M24 22.586L28.95 17.636L30.364 19.05L25.414 24L30.364 28.95L28.95 30.364L24 25.414L19.05 30.364L17.636 28.95L22.586 24L17.636 19.05L19.05 17.636L24 22.586Z" fill="#012345"/>
             </svg>
@@ -22,17 +22,17 @@
           </div>
 
           <label class="input-group">
-            <input class="modal-form-input modal-form-name" placeholder="Name">
+            <input v-model="name" class="modal-form-input modal-form-name" placeholder="Name">
           </label>
           <label class="input-group">
-            <input class="modal-form-input modal-form-desc" placeholder="Description">
+            <input v-model="desc" class="modal-form-input modal-form-desc" placeholder="Description">
           </label>
           <label class="input-group">
-            <input class="modal-form-input modal-form-price" placeholder="Rent price">
+            <input v-model="price" class="modal-form-input modal-form-price" placeholder="Rent price">
             <span class="modal-form-input-icon">$/h</span>
           </label>
 
-          <button class="modal-form-btn cursor">Complete</button>
+          <button @click.prevent="addVehicle" class="modal-form-btn cursor">Complete</button>
 
         </div>
       </div>
@@ -48,17 +48,46 @@ import AddItemRent from '@/components/Actionbar/AddItemRent'
 export default {
   components: { FilterRent, AddItemRent },
   data: () => ({
-    form: false
+    form: false,
+    price: '',
+    name: '',
+    desc: ''
   }),
   methods: {
+    addVehicle () {
+      const id = "abcdefghijklmnopqrstuvwxyz";
+      let newId = "";
+      while (newId.length < 24) {
+        newId += id[Math.floor(Math.random() * id.length)];
+      }
+
+      const objVehicle = {
+        id: newId,
+        name: this.name,
+        type: 'custom',
+        description: this.desc,
+        rent: this.price,
+        preview: 'https://loremflickr.com/160/160/airship?random=5f2bb90af01f47feb86b5da0',
+        image: 'https://loremflickr.com/900/900/airship'
+      }
+
+      this.$store.commit('addVehicle', objVehicle);
+
+      this.price = '';
+      this.name = '';
+      this.desc = '';
+      this.form = false;
+    },
     actionForm (val) {
       this.form = this.form === val ? !val : val;
 
       const body = document.querySelector('body');
       if (val) {
         body.classList.add('blur');
+        body.classList.add('hide');
       } else {
         body.classList.remove('blur');
+        body.classList.remove('hide');
       }
     }
   }
@@ -73,7 +102,7 @@ export default {
   padding-bottom: 2rem;
 }
 
-.modal {    
+.modal {
   position: fixed;
   left: 0;
   right: 0;
@@ -90,6 +119,7 @@ export default {
     right: 0;
     height: 100%;
     border-radius: 48px 0 0 48px;
+    overflow: auto;
 
     .modal-form-box {
       display: flex;
@@ -134,7 +164,7 @@ export default {
       font-weight: 300;
       font-size: 16px;
       line-height: 14px;
-      
+
       &:focus {
         outline: none;
       }

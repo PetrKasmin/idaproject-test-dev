@@ -1,17 +1,18 @@
 // Media
 @import 'media';
 @import 'animation';
+@import 'helpers';
 
 html {
   font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  'Source Sans Pro',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -74,10 +75,10 @@ $dark-background-content: #011C37;
   .nav-profile .nav-profile-name,
   .brand .brand-title,
   .action-rent-price,
+  .info-title,
   #action-nav .rent {
     color: $light-color-current;
   }
-  
 }
 
 .dark {
@@ -102,6 +103,7 @@ $dark-background-content: #011C37;
   .nav-profile .nav-profile-name,
   .brand .brand-title,
   .action-rent-price,
+  .info-title,
   #action-nav .rent {
     color: $dark-color-current;
   }

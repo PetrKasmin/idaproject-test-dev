@@ -34,6 +34,7 @@ export default {
     align-items: flex-start;
     flex-wrap: wrap;
     height: 100%;
+    margin: 0 -1rem;
 }
 
 .vehicles-wrap {

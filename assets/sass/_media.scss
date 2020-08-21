@@ -1,1 +1,261 @@
 // MEDIA
+
+@media (min-width: 1200px) {
+  // vehicles
+  .vehicles {
+    .vehicles-wrap {
+      width: 33.333333%;
+    }
+  }
+
+  .nav-profile .nav-profile-name {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  // vehicles
+  .vehicles {
+    .vehicles-wrap {
+      width: 33.333333%;
+    }
+  }
+
+  .nav-profile .nav-profile-name {
+    display: block;
+  }
+
+  // .nav-profile .nav-profile-name,
+  .brand .brand-subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  // vehicles
+  .vehicles {
+    .vehicles-wrap {
+      width: 50%;
+    }
+  }
+
+  .nav-profile .nav-profile-name {
+    display: block;
+  }
+
+  .nav-profile .nav-profile-name,
+  .brand .brand-subtitle,
+  .mod {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  // vehicles
+  .vehicles {
+    .vehicles-wrap {
+      width: 100%;
+    }
+  }
+
+  .nav-profile .nav-profile-name,
+  .brand .brand-subtitle,
+  .mod {
+    display: none;
+  }
+
+  #action-nav {
+    padding-bottom: 1rem;
+
+    .rent {
+      font-size: 24px;
+      line-height: 110%;
+
+      .rent-box {
+        width: 56%;
+      }
+
+      .rent-box-select {
+        font-size: 24px;
+        width: 88%;
+        padding-right: 12px;
+      }
+    }
+
+    .add-item {
+      font-size: 19px;
+
+      .add-item-btn {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  .container {
+    padding: 1.6rem 2rem !important;
+  }
+
+  #main-nav {
+    padding-bottom: 1rem;
+  }
+
+
+  .vehicle {
+    .vehicles-image {
+      width: 100%;
+    }
+
+    .vehicles-details {
+      width: 100%;
+      // padding-left: 0;
+      padding-bottom: 7rem;
+
+      .info-nav {
+        padding: 0 0 1rem;
+      }
+
+      .info-details-wrap {
+        width: 200px;
+      }
+    }
+
+    .action-rent {
+      position: fixed;
+      bottom: 1rem;
+      left: 2rem;
+      right: 2rem;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  // vehicles
+  .vehicles {
+    .vehicles-wrap {
+      width: 100%;
+    }
+  }
+
+  .nav-profile .nav-profile-name,
+  .brand .brand-subtitle,
+  .mod {
+    display: none;
+  }
+
+  #action-nav {
+    padding-bottom: 1rem;
+
+    .rent {
+      font-size: 19px;
+      line-height: 140%;
+
+      .rent-box {
+        width: 56%;
+      }
+
+      .rent-box-select {
+        font-size: 19px;
+        width: 88%;
+        padding-right: 10px;
+      }
+    }
+
+    .add-item {
+      font-size: 16px;
+
+      .add-item-btn {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  .container {
+    padding: 1rem 1rem !important;
+    border-radius: 25px !important;
+  }
+
+  .nav-profile .nav-profile-item.nav-profile-item--notify {
+    margin-right: 1rem;
+  }
+
+  .nav-profile .nav-profile-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  #main-nav {
+    padding-bottom: 1rem;
+  }
+
+
+  .vehicle {
+    .vehicles-image {
+      width: 100%;
+    }
+
+    .vehicles-details {
+      width: 100%;
+      padding-left: 0;
+      padding-bottom: 7rem;
+
+      .info-nav {
+        padding: 0 0 1rem;
+      }
+
+      .info-details-wrap {
+        width: 200px;
+      }
+    }
+
+    .action-rent {
+      position: fixed;
+      bottom: 1rem;
+      left: 2rem;
+      right: 2rem;
+    }
+  }
+
+  .wrapper {
+    padding: 1rem 1rem !important;
+  }
+
+  .modal .modal-form {
+    width: auto !important;
+    padding: 1rem 2rem !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    bottom: 0 !important;
+    height: 84% !important;
+    border-radius: 20px 20px 0 0 !important;
+
+    .modal-form-box-title {
+      font-size: 24px !important;
+      line-height: 190% !important;
+    }
+    .modal-form-box-icon {
+      width: 30px !important;
+    }
+
+    .modal-form-img {
+      height: 170px !important;
+      margin: 1rem 0 !important;
+    }
+
+    .input-group {
+      margin-bottom: 1rem !important;
+    }
+
+    .modal-form-input {
+      height: 52px !important;
+      font-size: 14px !important;
+    }
+
+    .modal-form-btn {
+      height: 52px !important;
+      width: 100% !important;
+      font-size: 14px !important;
+    }
+  }
+}

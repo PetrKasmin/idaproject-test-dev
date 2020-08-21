@@ -51,6 +51,7 @@ export default {
 
   span {
     color: #677B8F;
+    cursor: pointer;
   }
 }
 </style>

@@ -32,6 +32,9 @@ export const mutations = {
     },
     setError (state, payload) {
         state.error = payload;
+    },
+    addVehicle (state, payload) {
+        state.vehicleFiltered.push(payload);
     }
 }
 
@@ -43,7 +46,7 @@ export const actions = {
             commit('setVehicles', vehicles);
         } catch (e) {
             console.log(e);
-            commit('setError', true);                    
+            commit('setError', true);
         }
     },
     vehicleFiltered ({ state, commit }, payload) {
